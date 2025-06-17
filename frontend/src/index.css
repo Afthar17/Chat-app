@@ -1,0 +1,45 @@
+@import "tailwindcss";
+@plugin "daisyui";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Share+Tech&display=swap');
+
+body{
+    background :linear-gradient(#141e30,#243b55);
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  position: relative;
+  background-color: #8e9396;
+  width: 3.2rem;
+  height: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.7s ease;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #fff;
+  border-radius: 20px;
+  transform: scale(0.8);
+  transition: all 0.7s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+input[type="checkbox"]:checked::before {
+  background-color: #fff;
+  left: 1.6rem;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #0984e3;
+}
+
