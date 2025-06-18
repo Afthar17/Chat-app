@@ -26,9 +26,21 @@ app.use("/api/auth", authRoutes);
 app.use("/api/message", messageRoutes);
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "/frontend/dist")));
-  app.get("/*", (req, res) => {
-    res.sendFile(path.join(__dirname, "/frontend", "dist", "index.html"));
+  app.use(express.static(path.join(__dirname, "../../frontend/dist")));
+
+  // Match any route not starting with /api
+
+  //in version 5 of express path to regrex couldnt work on wildcard routes so use normal javascript regrex
+  //   app.get(/^\/(?!api).*/, (req, res) => {
+  //     res.sendFile(path.join(__dirname, "../../frontend/dist/index.html"));
+  //   });
+
+  app.get("*", (req, res, next) => {
+    // Skip API routes
+    if (req.originalUrl.startsWith("/api")) return next();
+
+    res.sendFile(path.join(__dirname, "../../frontend", "dist", "index.html"));
+    console.log(__dirname);
   });
 }
 
