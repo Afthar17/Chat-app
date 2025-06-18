@@ -6,7 +6,7 @@ import { io } from "socket.io-client";
 const serverUrl =
   import.meta.env.MODE === "development"
     ? "http://localhost:5001/api"
-    : "https://chat-app-uz18.onrender.com/api";
+    : "https://chat-app-uz18.onrender.com";
 export const useAuthStore = create((set, get) => ({
   authUser: null,
   isCheckingAuth: true,
