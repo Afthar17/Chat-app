@@ -4,7 +4,9 @@ import toast from "react-hot-toast";
 import { io } from "socket.io-client";
 
 const serverUrl =
-  import.meta.env.MODE === "development" ? "http://localhost:5001/api" : "/api";
+  import.meta.env.MODE === "development"
+    ? "http://localhost:5001/api"
+    : "https://chat-app-uz18.onrender.com/api";
 export const useAuthStore = create((set, get) => ({
   authUser: null,
   isCheckingAuth: true,
