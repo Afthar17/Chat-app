@@ -36,9 +36,6 @@ if (process.env.NODE_ENV === "production") {
   //   });
 
   app.get("*", (req, res, next) => {
-    // Skip API routes
-    if (req.originalUrl.startsWith("/api")) return next();
-
     res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
     console.log(__dirname);
   });
