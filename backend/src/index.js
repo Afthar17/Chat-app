@@ -7,6 +7,7 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import { app, server } from "./lib/socket.js";
 import path from "path";
+import chatRoutes from './routes/chatbot.route.js';
 
 dotenv.config();
 
@@ -24,6 +25,8 @@ app.use(cors(corsOptions));
 
 app.use("/api/auth", authRoutes);
 app.use("/api/message", messageRoutes);
+app.use('/api/chatbot',chatRoutes)
+
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../frontend/dist")));
@@ -37,7 +40,7 @@ if (process.env.NODE_ENV === "production") {
 
   app.get("*", (req, res, next) => {
     res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
-    console.log(__dirname);
+    console.log(__dirname); 
   });
 }
 

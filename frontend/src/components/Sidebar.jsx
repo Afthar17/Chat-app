@@ -1,7 +1,7 @@
-import React, {  useEffect, useState } from 'react'
+import {  useEffect, useState } from 'react'
 import { useChatStore } from '../store/useChatStore'
 import SidebarSkeleton from './skeltons/SidebarSkelton'
-import { AlarmClockOff, Croissant, NutOff, Users } from 'lucide-react';
+import {  Users } from 'lucide-react';
 import { useAuthStore } from '../store/useAuthStore';
 
 const Sidebar = () => {
@@ -26,7 +26,7 @@ const Sidebar = () => {
           <input type="checkbox" checked={showOnlineOnly} onChange={(e) => setshowOnlineOnly(e.target.checked)}/>
           
         </div>
-        <div className="overflow-y-auto w-full border border-[#219ebc]/10">
+        <div className="overflow-y-auto w-full flex flex-col items-center border border-[#219ebc]/10">
           {filteredUsers.map((user, idx) => (
             <button key={idx}
              onClick={() => setSelectedUser(user)}

@@ -3,6 +3,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Share+Tech&display=swap');
 
+
+*{
+  scrollbar-width: thin;
+  scrollbar-color: #8e9396 #141e30;
+  scrollbar-gutter: stable;
+  scroll-behavior: smooth;
+}
 body{
     background :linear-gradient(#141e30,#243b55);
     color: #fff;
